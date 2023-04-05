@@ -1,14 +1,10 @@
 const mg = require("mongoose");
 
-const userSchema = mg.Schema(
-  {
-    name: { type: String, required: true },
-    age: { type: Number, requried: true },
-    email: { type: String, requried: true },
-    password: { type: String, requried: true },
-  },
-  { versionKey: false }
-);
+const userSchema = mg.Schema({
+  name: String,
+  email: { type: String, required: true },
+  password: { type: String, required: true },
+});
 
 const userModel = mg.model("user", userSchema);
 

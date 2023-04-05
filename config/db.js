@@ -1,7 +1,5 @@
 const mg = require("mongoose");
-
-const connection = mg.connect(
-  `mongodb+srv://mandar:mandar@cluster0.le1hx.mongodb.net/ProApp?retryWrites=true&w=majority`
-);
+require("dotenv").config();
+const connection = mg.connect(process.env.mongoDB_URL);
 
 module.exports = connection;
